@@ -273,11 +273,10 @@ class ContourFingerCounter:
         bx, by, bw, bh = cv2.boundingRect(largest)
         valid_defects = 0
 
-        for i in range(defects.shape[0]):
-            s, e, f, d = defects[i, 0]
-            start = tuple(largest[s][0])
-            end = tuple(largest[e][0])
-            far = tuple(largest[f][0])
+        for s, e, f, d in defects.reshape(-1, 4):
+            start = tuple(largest[int(s)][0])
+            end = tuple(largest[int(e)][0])
+            far = tuple(largest[int(f)][0])
 
             # Panjang sisi segitiga antar 2 ujung jari dan lembah (defect)
             a = _dist(start, end)

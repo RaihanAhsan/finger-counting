@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Downloaded AI models (auto-downloaded on first run)
+*.pt
+*.onnx
+models/*.task
+
+# Runtime outputs
+captures/
+
+# macOS & IDE
+.DS_Store
+.vscode/
+.idea/

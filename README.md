@@ -13,6 +13,40 @@ Program pengolahan citra real-time menggunakan **kamera internal laptop** untuk 
   - `Y` : Aktifkan / nonaktifkan overlay deteksi YOLO
   - `S` : Simpan screenshot hasil deteksi ke folder `captures/`
 
+## Instalasi
+
+### Prasyarat
+- Python **3.10 – 3.12** (disarankan Python 3.12)
+- Kamera internal laptop / webcam
+- Koneksi internet saat pertama kali dijalankan (untuk mengunduh model `yolo11n.pt` dan `hand_landmarker.task` secara otomatis)
+
+### 1. Clone Repository
+```bash
+git clone <url-repository-anda>
+cd Project-Dummy
+```
+
+### 2. Buat & Aktifkan Virtual Environment
+Menggunakan `venv` standar Python:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate        # macOS / Linux
+# .venv\Scripts\activate         # Windows (CMD/PowerShell)
+```
+
+Atau menggunakan `uv` (lebih cepat):
+```bash
+uv venv .venv --python 3.12
+source .venv/bin/activate
+```
+
+### 3. Install Dependensi
+```bash
+pip install -r requirements.txt
+# atau jika menggunakan uv:
+uv pip install --python .venv/bin/python -r requirements.txt
+```
+
 ## Cara Menjalankan
 
 Aktifkan virtual environment dan jalankan `main.py`:
